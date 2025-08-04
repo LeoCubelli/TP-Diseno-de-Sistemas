@@ -1,0 +1,59 @@
+{{#partial "navItems"}}
+    <ul class="navbar-nav ml-auto">
+    </ul>
+{{/partial}}
+
+{{#partial "content"}}
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1 class="text-center">Encontré Una Mascota</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="ex-form-1 pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 offset-xl-3">
+                    <div class="text-box mt-1">
+                        <h2 class="mb-3">Cómo Encontró a la Mascota</h2>
+                            <form id="signUpForm" action="/form-con-chapita" method="POST">
+                                     <div class="form-group">
+                                         <input type="text" class="form-control-input" id="name" required name="fotos" value="{{ fotos }}">
+                                         <label class="label-control" for="name">Adjuntar Fotos</label>
+                                     </div>
+                                      <div class="form-group">
+                                         <input type="date" class="form-control-input" id="date" required name = "fechaEncontrado">
+                                         <label class="label-control" for="date">Fecha de Encuentro</label>
+                                     </div>
+                                     <div class="form-group">
+                                         <input type="text" class="form-control-input" id="name" required name = "descripcion">
+                                         <label class="label-control" for="name">Descripcion </label>
+                                     </div>
+                                     <div class="form-group">
+                                         <input type="text" class="form-control-input" id="name" required name = "direccion">
+                                         <label class="label-control" for="name">Direccion del Encuentro </label>
+                                     </div>
+                                     <div class="form-group">
+                                         <input type="text" class="form-control-input" id="name" required name = "ubicacion">
+                                         <label class="label-control" for="name">Ubicación del Encuentro (latitud, longitud) </label>
+                                     </div>
+
+                                {{>info-rescatista.hbs}}
+
+                                {{>info-contacto.hbs}}
+
+                                <button type="submit" class="form-control-submit-button">Contactar Dueño</button>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}

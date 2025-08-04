@@ -1,0 +1,85 @@
+{{#partial "content"}}
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1 class="text-center">Registro Mascota</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="ex-form-1 pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 offset-xl-3">
+                    <div class="text-box">
+                        <h2 class="mb-3">Ingrese los datos</h2>
+                            <form id="signUpForm" action="/duenio/mis-mascotas/registro-mascota" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control-input" id="text" required name="nombre" value="{{ nombre }}">
+                                    <label class="label-control" for="text">Nombre</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control-input" id="name" required name="apodo" value="{{ apodo }}">
+                                    <label class="label-control" for="name">Apodo</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="number" class="form-control-input" id="name" required name="edad" value="{{ edad }}" min="1" max="20">
+                                    <label class="label-control" for="name">Edad</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control-input" id="name" required name="descripcion" value="{{ descripcion }}">
+                                    <label class="label-control" for="name">Descripción</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipo">Tipo</label>
+                                    <br>
+                                    <input type="radio" id="perro" name="tipo" value="Perro" checked="checked">
+                                    <label>Perro</label>
+                                    <input type="radio" id="gato" name="tipo" value="Gato">
+                                    <label>Gato</label><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sexo">Sexo</label>
+                                    <br>
+                                    <input type="radio" id="macho" name="sexo" value="Macho" checked="checked">
+                                    <label>Macho</label>
+                                    <input type="radio" id="hembra" name="sexo" value="Hembra">
+                                    <label>Hembra</label><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sexo">Tamaño</label>
+                                    <br>
+                                    <input type="radio" id="pequeña" name="tamanio" value="0" checked="checked">
+                                    <label>Pequeña</label>
+                                    <input type="radio" id="mediana" name="tamanio" value="1">
+                                    <label>Mediana</label>
+                                    <input type="radio" id="grande" name="tamanio" value="2">
+                                    <label>Grande</label><br>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control-input" id="name" required name="fotos" value="{{ fotos }}">
+                                    <label class="label-control" for="name">Adjuntar Fotos</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Seleccionar Caracteristicas</label>
+                                    <br>
+                                    {{#each tipoCaracteristicas}}
+                                        <label for="name"> {{ tipoCaracteristica }}</label>
+                                        <input type="text" class="form-control-input" id="name" required name="caracteristica-{{ tipoCaracteristica }}" value="{{ caracteristica }}">
+                                    {{/each}}
+                                </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control-submit-button">Agregar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}

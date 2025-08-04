@@ -1,0 +1,42 @@
+{{#partial "navItems"}}
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link page-scroll" href="">Mascotas Encontradas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link page-scroll" href="">Mascotas en Adopción</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link page-scroll" href="">Mascotas Deseadas</a>
+        </li>
+    </ul>
+    {{>logoutButton.hbs}}
+{{/partial}}
+
+{{#partial "content"}}
+    <div id="pricing" class="basic-3">
+        <p align="center"><img src="/images/perro.gif"></p>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-container first">
+                        <a href="" style="text-decoration:none;"><h2>Dar En Adopción</h2></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="text-container first">
+                        <a href="" style="text-decoration:none;"><h2>Mis Publicaciones</h2></a>
+                    </div>
+                </div>
+                <br>
+                <div class="col-lg-4">
+                    <div class="text-container first">
+                        <a href="/duenio/mis-mascotas" style="text-decoration:none;"><h2>Mis<br>Mascotas</h2></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}

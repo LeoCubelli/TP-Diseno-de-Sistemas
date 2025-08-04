@@ -1,0 +1,39 @@
+{{#partial "navItems"}}
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link page-scroll" href="/form-sin-chapita">Encontré Una Mascota</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link page-scroll" href="">Dar En Adopción</a>
+        </li>
+    </ul>
+    {{>signInButton.hbs}}
+{{/partial}}
+
+{{#partial "content"}}
+        <!-- Header -->
+        <header id="header" class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-container">
+                            <h1 class="h1-large">Patitas!</h1>
+                            <p style="text-align:left" class="p-large p-heading">Con Patitas ahora es maś fácil adoptar y dar en adopción una mascota.
+                                Además, también vas a poder publicar avisos de mascotas perdidas.</p>
+                                <p align="center" class="p-large">¿Qué esperas para registrarte?</p>
+                            <a class="btn-solid-lg" href="/duenio/signup">Registrarse</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="image-container">
+                            <img class="img-fluid" src="/images/walkingretriever.gif" alt="alternative">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{{/partial}}
+
+{{>layout.hbs}}

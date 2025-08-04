@@ -1,0 +1,43 @@
+{{>head.hbs}}
+
+{{#partial "body"}}
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light">
+        <div class="container">
+            <a class="navbar-brand logo-image" href="/admin/home"><img src="/images/salida.png" alt="alternative"></a>
+            </div>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+
+    <div class="ex-form-1 pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 offset-xl-3">
+                    <div class="text-box mt-5">
+                        <form id="logInForm" action="/admin/form-caracteristica" method="POST">
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="text" required name="tipoCaracteristica" value="{{ tipoCaracteristica }}">
+                                <label class="label-control" for="text">Tipo Caracteristica</label>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="form-control-submit-button">Agregar</button>
+                            </div>
+                        </form>
+                        <div class="form-group">
+                            <label for="name"><b>Caracteristicas</b></label>
+                            <br>
+                            {{#each tipoCaracteristicas}}
+                                <label for="name"> {{ tipoCaracteristica }}</label>
+                                <br>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{>body.hbs}}

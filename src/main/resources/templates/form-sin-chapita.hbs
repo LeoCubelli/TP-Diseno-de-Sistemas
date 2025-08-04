@@ -1,0 +1,94 @@
+{{#partial "navItems"}}
+    <ul class="navbar-nav ml-auto">
+    </ul>
+{{/partial}}
+
+{{#partial "content"}}
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1 class="text-center">Encontré Una Mascota</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="ex-form-1 pt-4 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 offset-xl-3">
+                    <div class="text-box">
+                            <h3 class="mb-3">Información sobre la Mascota</h3>
+                            <form id="signUpForm" action="/form-sin-chapita" method="POST">
+                                <div class="form-group">
+                                    <input type="text" class="form-control-input" id="text" required name="descripcion" value="{{ descripcion }}">
+                                    <label class="label-control" for="text">Descripción</label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tipo">Tipo</label>
+                                    <br>
+                                    <input type="radio" id="perro" name="tipo" value="Perro" checked="checked">
+                                    <label>Perro</label>
+                                    <input type="radio" id="gato" name="tipo" value="Gato">
+                                    <label>Gato</label><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sexo">Sexo</label>
+                                    <br>
+                                    <input type="radio" id="macho" name="sexo" value="Macho" checked="checked">
+                                    <label>Macho</label>
+                                    <input type="radio" id="hembra" name="sexo" value="Hembra">
+                                    <label>Hembra</label><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="tamanio">Tamaño</label>
+                                    <br>
+                                    <input type="radio" id="pequeña" name="tamanio" value="0" checked="checked">
+                                    <label>Pequeña</label>
+                                    <input type="radio" id="mediana" name="tamanio" value="1">
+                                    <label>Mediana</label>
+                                    <input type="radio" id="grande" name="tamanio" value="2">
+                                    <label>Grande</label><br>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name"><h6>Completar Caracteristicas (Opcional)</h6></label>
+                                    <br>
+                                    {{#each tipoCaracteristicas}}
+                                        <label for="name"> {{ tipoCaracteristica }}</label>
+                                        <input type="text" class="form-control-input" id="name" required name="caracteristica-{{ tipoCaracteristica }}" value="{{ caracteristica }}">
+                                    {{/each}}
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control-input" id="name" required name="fotos" value="{{ fotos }}">
+                                    <label class="label-control" for="name">Adjuntar Fotos</label>
+                                </div>
+                                 <div class="form-group">
+                                    <input type="date" class="form-control-input" id="date" required name = "fechaEncontrado">
+                                    <label class="label-control" for="date">Fecha de Encuentro</label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control-input" id="name" required name = "direccion">
+                                    <label class="label-control" for="name">Direccion del Encuentro </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control-input" id="name" required name = "ubicacion">
+                                    <label class="label-control" for="name">Ubicación del Encuentro (latitud, longitud) </label>
+                                </div>
+
+                                {{>info-rescatista.hbs}}
+
+                                {{>info-contacto.hbs}}
+
+                                <button type="submit" class="form-control-submit-button">Agregar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/partial}}
+
+{{>layout.hbs}}

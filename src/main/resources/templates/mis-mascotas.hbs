@@ -1,0 +1,81 @@
+{{#partial "navItems"}}
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link page-scroll" href="">Dar En Adopción</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link page-scroll" href="">Mis Publicaciones</a>
+        </li>
+    </ul>
+{{/partial}}
+
+{{#partial "content"}}
+    <br>
+    <br>
+    </div>
+    <div class="cards-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    {{#each mascotas}}
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">{{nombre}}</h4>
+                            <img height="200" width="200" src="{{datosMascota.principalImage}}">
+                            <p><b>Apodo</b>: {{apodo}}</p>
+                            <p><b>Descripción</b>: {{datosMascota.descripcion}}</p>
+                            <p><b>Tipo</b>: {{datosMascota.tipoMascota}}</p>
+                            <p><b>Edad</b>: {{edad}}</p>
+                            <p><b>Sexo</b>: {{datosMascota.sexo}}</p>
+                            <p><b>Tamaño</b>: {{datosMascota.tamanio}}</p>
+
+                            {{#each datosMascota.caracteristicas}}
+                                <p><b>{{tipo}}</b>: {{descripcion}}</p>
+                            {{/each}}
+                        </div>
+                        <div class="card-icon blue">
+                            <div align="center" name="qrprint">
+                              <span name="qrcode" url="patitas17.herokuapp.com/form-con-chapita?id={{id}}"></span>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", function() {
+        var qrs = document.getElementsByName("qrcode");
+        var qrprints = document.getElementsByName("qrprint");
+
+        for(var i = 0;i < qrs.length;i++) {
+            new QRCode(qrs[i],{
+                text: qrs[i].getAttribute("url"),
+                width: 100,
+                height: 100,
+                colorDark: "#0000ff",
+                colorLight: "#ffffff",
+                // QRCode.CorrectLevel.L | QRCode.CorrectLevel.M | QRCode.CorrectLevel.H
+                correctLevel: QRCode.CorrectLevel.H
+            });
+
+		        qrprints[i].addEventListener("click", function() {
+			        var printwin = window.open("");
+			        printwin.document.write(this.innerHTML);
+			        printwin.print();
+			        printwin.close();
+		        });
+        }
+    });
+    </script>
+
+    <div style="text-align:center">
+        <a class="btn-solid-lg" href="/duenio/mis-mascotas/registro-mascota">Agregar Nueva Mascota</a>
+    </div>
+    <br>
+    <br>
+{{/partial}}
+
+{{>layout.hbs}}
