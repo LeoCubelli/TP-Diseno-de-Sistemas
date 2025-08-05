@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class HogaresAPI {
-  private String token = "bYnqHPGADjonwmPfAxcQtCdDSRUAYDSA1q24pRWD7G26F4acFVwhPNlbY0Vw";
+  private String token = "";
   private String urlApi = "https://api.refugiosdds.com.ar/api/";
   private Retrofit retrofit;
 
